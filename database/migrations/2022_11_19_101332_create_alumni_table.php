@@ -20,8 +20,10 @@ return new class extends Migration
             $table->string('tempat_lahir', 50);
             $table->date('tanggal_lahir');
             $table->string('ortu_wali', 50);
-            $table->foreignId('id_jurusan')->constrained('jurusan');
+            $table->string('id_jurusan', 1);
             $table->string('tahun_masuk', 20);
+            $table->string('status', 20);
+            $table->string('tahun_keluar', 20);
             $table->string('foto', 255);
             $table->timestamps();
         });

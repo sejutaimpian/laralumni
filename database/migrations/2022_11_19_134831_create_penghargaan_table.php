@@ -15,11 +15,9 @@ return new class extends Migration
     {
         Schema::create('penghargaan', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('nis');
+            $table->string('nis', 100);
             $table->string('penghargaan', 100);
             $table->timestamps();
-
-            $table->foreign('nis')->references('nis')->on('alumni');
         });
     }
 

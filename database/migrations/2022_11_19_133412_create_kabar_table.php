@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('kabar', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('idakun')->constrained('akun');
+            $table->string('idakun', 50);
             $table->string('judul', 128);
             $table->text('isi');
             $table->string('foto', 255);

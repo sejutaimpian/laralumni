@@ -15,16 +15,15 @@ return new class extends Migration
     {
         Schema::create('akun', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('nis');
+            $table->string('nis', 100);
             $table->string('nama', 100);
             $table->string('nowhatsapp', 20);
             $table->string('email', 100);
             $table->string('password', 255);
             $table->string('foto', 255);
+            $table->string('role', 20);
             $table->string('is_active', 1);
             $table->timestamps();
-
-            $table->foreign('nis')->references('nis')->on('alumni');
         });
     }
 

@@ -19,6 +19,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('siswaterbaik', [HomeController::class, 'siswaterbaik']);
 Route::get('kabaralumni', [HomeController::class, 'kabaralumni']);
 Route::get('kabaralumni/{id}', [HomeController::class, 'kabar']);
+Route::get('loker', [HomeController::class, 'loker']);
 
 Route::get('/test', function () {
     dd(Session::all());

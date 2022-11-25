@@ -50,4 +50,13 @@ class HomeController extends Controller
         ];
         return view('home/kabar', $data);
     }
+    public function loker()
+    {
+        $data = [
+            'title' => 'Lowongan Pekerjaan',
+            'profile' => $this->profile,
+            'loker' => LokerModel::orderBy('deadline')->get()
+        ];
+        return view('home/loker', $data);
+    }
 }

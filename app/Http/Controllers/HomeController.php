@@ -59,4 +59,13 @@ class HomeController extends Controller
         ];
         return view('home/loker', $data);
     }
+    public function kenangan()
+    {
+        $data = [
+            'title' => 'Kenangan Siswa',
+            'profile' => $this->profile,
+            'kenangan' => KenanganModel::orderBy('created_at')->get()
+        ];
+        return view('home/kenangan', $data);
+    }
 }

@@ -41,4 +41,13 @@ class HomeController extends Controller
         ];
         return view('home/kabaralumni', $data);
     }
+    public function kabar($id)
+    {
+        $data = [
+            'title' => 'Kabar Alumni',
+            'profile' => $this->profile,
+            'kabar' => KabarModel::getJoinKabarAkun($id)
+        ];
+        return view('home/kabar', $data);
+    }
 }

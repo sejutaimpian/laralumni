@@ -5,6 +5,7 @@ namespace App\Models;
 use Database\Factories\AlumniFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class AlumniModel extends Model
 {
@@ -27,5 +28,16 @@ class AlumniModel extends Model
     public function jurusan()
     {
         return $this->belongsTo(AlumniModel::class);
+    }
+
+    protected static function cekData($nis, $nama)
+    {
+        return DB::table('alumni')
+            ->join('jurusan', 'alumni.id_jurusan', '=', 'jurusan.id')
+            ->where([
+                ['nis', '=', $nis],
+                ['nama', '=', $nama]
+            ])
+            ->first();
     }
 }

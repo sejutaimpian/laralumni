@@ -68,4 +68,28 @@ class HomeController extends Controller
         ];
         return view('home/kenangan', $data);
     }
+    public function cekdata(Request $request)
+    {
+        $nis = $request->nis;
+        $nama = $request->nama;
+
+        $alumni = AlumniModel::cekData($nis, $nama);
+
+        if ($alumni) {
+            session()->flash('berhasil', 'Data yang anda cari telah ditemukan');
+            session()->flash('status', 'secondary');
+            session()->flash('icon', 'check-circle-fill');
+        } else {
+            session()->flash('gagal', 'Data yang anda cari tidak ditemukan');
+            session()->flash('status', 'danger');
+            session()->flash('icon', 'exclamation-triangle-fill');
+        }
+
+        $data = [
+            'title' => 'Cek Data',
+            'profile' => $this->profile,
+            'alumni' => $alumni
+        ];
+        return view('home/cekdata', $data);
+    }
 }

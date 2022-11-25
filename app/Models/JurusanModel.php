@@ -11,10 +11,6 @@ class JurusanModel extends Model
     use HasFactory;
     protected $table = 'jurusan';
 
-    protected static function newFactory()
-    {
-        return JurusanFactory::new();
-    }
     public function alumni()
     {
         return $this->hasMany(AlumniModel::class);

@@ -23,4 +23,13 @@ class HomeController extends Controller
         ];
         return view('home/index', $data);
     }
+    public function siswaterbaik()
+    {
+        $data = [
+            'title' => 'Siswa Terbaik',
+            'profile' => $this->profile,
+            'penghargaan' => PenghargaanModel::getJoinPenghargaanAlumni()
+        ];
+        return view('home/siswaterbaik', $data);
+    }
 }

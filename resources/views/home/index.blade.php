@@ -1,5 +1,4 @@
 @extends('layout.template')
-
 @section('content')
 
 <!-- Intro Section -->

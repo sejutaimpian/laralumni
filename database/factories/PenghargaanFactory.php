@@ -19,7 +19,7 @@ class PenghargaanFactory extends Factory
     public function definition()
     {
         return [
-            'nis' => mt_rand(0, 9999),
+            'nis' => mt_rand(1, 10),
             'penghargaan' => fake()->sentence(),
             'created_at' => now(),
             'updated_at' => now()

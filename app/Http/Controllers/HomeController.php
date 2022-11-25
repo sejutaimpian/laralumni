@@ -32,4 +32,13 @@ class HomeController extends Controller
         ];
         return view('home/siswaterbaik', $data);
     }
+    public function kabaralumni()
+    {
+        $data = [
+            'title' => 'Kabar Alumni',
+            'profile' => $this->profile,
+            'kabar' => KabarModel::getJoinKabarAkun()
+        ];
+        return view('home/kabaralumni', $data);
+    }
 }

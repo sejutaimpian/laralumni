@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Session;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('siswaterbaik', [HomeController::class, 'siswaterbaik']);
+Route::get('kabaralumni', [HomeController::class, 'kabaralumni']);
 
 Route::get('/test', function () {
     dd(Session::all());

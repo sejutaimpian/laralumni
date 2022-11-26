@@ -28,8 +28,8 @@ Route::get('kabaralumni', [HomeController::class, 'kabaralumni']);
 Route::get('kabaralumni/{id}', [HomeController::class, 'kabar']);
 Route::get('loker', [HomeController::class, 'loker']);
 Route::get('kenangan', [HomeController::class, 'kenangan']);
+Route::get('logout', [LoginController::class, 'logout']);
 
 Route::get('/test', function () {
-    AkunModel::where('id', 1)
-        ->update(['password' => Hash::make('eris')]);
+    dd(auth()->user());
 });

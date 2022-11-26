@@ -4,7 +4,8 @@
 <div class="container my-5">
     <div class="row">
         <div class="col-md-6 mx-auto">
-            <form action="/login/validasi" method="POST">
+            <form action="/login" method="POST">
+                @csrf
                 <img class="mx-auto d-block mb-5" src="/aset/<?= $profile['logo']; ?>" alt="Logo SMK" width="72">
                 <h1 class="mb-3">Halaman Login</h1>
                 @if (session('pesan'))

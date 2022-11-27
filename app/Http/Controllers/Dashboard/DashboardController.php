@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\AlumniModel;
@@ -10,7 +10,7 @@ use App\Models\LokerModel;
 use App\Models\PenghargaanModel;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class DashboardController extends Controller
 {
     public function index()
     {
@@ -37,6 +37,6 @@ class AdminController extends Controller
             'kenangan' => $kenangan,
             'total' => $total
         ];
-        return view('admin/index', $data);
+        return view('dashboard/index', $data);
     }
 }

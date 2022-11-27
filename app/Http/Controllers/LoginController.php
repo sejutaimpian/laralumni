@@ -29,11 +29,7 @@ class LoginController extends Controller
         ])) {
             $request->session()->regenerate();
 
-            if (auth()->user()->role == 'admin') {
-                return redirect()->intended('/admin');
-            } elseif (auth()->user()->role == 'user') {
-                return redirect()->intended('/user');
-            }
+            return redirect()->intended('dashboard');
         }
 
         return back()->with('pesan', 'Maaf! email atau password salah!');

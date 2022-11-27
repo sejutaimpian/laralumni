@@ -1,22 +1,22 @@
-<a href="/{{ auth()->user()->role }}" class="btn text-start d-block text-light">
+<a href="/dashboard" class="btn text-start d-block text-light">
     <i class="bi bi-speedometer2 pe-2"></i>
     <span>Dashboard</span>
 </a>
-<a href="/{{ auth()->user()->role }}/alumni" class="btn text-start d-block text-light">
+<a href="/dashboard/alumni" class="btn text-start d-block text-light">
     <i class="bi bi-mortarboard pe-2"></i>
     <span>Alumni</span></a>
-<a href="/{{ auth()->user()->role }}/siswaterbaik" class="btn text-start d-block text-light">
+<a href="/dashboard/siswaterbaik" class="btn text-start d-block text-light">
     <i class="bi bi-award pe-2"></i>
     <span>Penghargaan</span></a>
-<a href="/{{ auth()->user()->role }}/kabaralumni" class="btn text-start d-block text-light">
+<a href="/dashboard/kabaralumni" class="btn text-start d-block text-light">
     <i class="bi bi-newspaper pe-2"></i>
     <span>Kabar</span>
 </a>
-<a href="/{{ auth()->user()->role }}/loker" class="btn text-start d-block text-light">
+<a href="/dashboard/loker" class="btn text-start d-block text-light">
     <i class="bi bi-briefcase pe-2"></i>
     <span>Loker</span>
 </a>
-<a href="/{{ auth()->user()->role }}/kenangan" class="btn text-start d-block text-light">
+<a href="/dashboard/kenangan" class="btn text-start d-block text-light">
     <i class="bi bi-journal-album pe-2"></i>
     <span>Kenangan</span>
 </a>

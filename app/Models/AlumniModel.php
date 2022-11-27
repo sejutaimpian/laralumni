@@ -30,6 +30,20 @@ class AlumniModel extends Model
         return $this->belongsTo(AlumniModel::class);
     }
 
+    protected static function getJoinJurusan($nis = null)
+    {
+        if ($nis) {
+            return DB::table('alumni')
+                ->join('jurusan', 'alumni.id_jurusan', '=', 'jurusan.id')
+                ->where('nis', $nis)
+                ->get();
+        } else {
+            return DB::table('alumni')
+                ->join('jurusan', 'alumni.id_jurusan', '=', 'jurusan.id')
+                ->orderBy('tahun_keluar', 'desc')
+                ->get();
+        }
+    }
     protected static function cekData($nis, $nama)
     {
         return DB::table('alumni')

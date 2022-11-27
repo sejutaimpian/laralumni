@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="/library/bootstrap-icons/font/bootstrap-icons.css">
     <!-- <link rel="stylesheet" href="library/bootstrap/dist/css/bootstrap.css"> -->
     <!-- Datatables -->
-    <?php if (session('role')) : ?>
+    @auth    
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <script src="/js/script.js"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-    <?php endif; ?>
+    @endauth
     <link rel="stylesheet" href="/css/main.css">
 </head>
 

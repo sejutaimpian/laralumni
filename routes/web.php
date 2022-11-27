@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Models\AkunModel;
@@ -18,17 +19,22 @@ use Illuminate\Support\Facades\Session;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('cekdata', [HomeController::class, 'cekdata']);
-Route::get('login', [LoginController::class, 'index']);
-Route::post('login', [LoginController::class, 'validasi']);
-
+Route::middleware('guest')->group(function () {
+    Route::get('/', [HomeController::class, 'index']);
+    Route::get('cekdata', [HomeController::class, 'cekdata']);
+    Route::get('login', [LoginController::class, 'index'])->name('login');
+    Route::post('login', [LoginController::class, 'validasi']);
+});
 Route::get('siswaterbaik', [HomeController::class, 'siswaterbaik']);
 Route::get('kabaralumni', [HomeController::class, 'kabaralumni']);
 Route::get('kabaralumni/{id}', [HomeController::class, 'kabar']);
 Route::get('loker', [HomeController::class, 'loker']);
 Route::get('kenangan', [HomeController::class, 'kenangan']);
 Route::get('logout', [LoginController::class, 'logout']);
+
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('', [AdminController::class, 'index']);
+});
 
 Route::get('/test', function () {
     dd(auth()->user());

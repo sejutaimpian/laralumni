@@ -41,10 +41,11 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     // Route Alumni
     Route::prefix('alumni')->controller(AlumniController::class)->group(function () {
         Route::get('', 'index');
+        Route::get('{nis}', 'detail');
 
         Route::middleware('admin')->group(function () {
             Route::post('', 'tambahalumni');
-            Route::get('{id}', 'detail');
+            Route::get('{nis}/edit', 'edit');
         });
     });
 });

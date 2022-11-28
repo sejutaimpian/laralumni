@@ -36,7 +36,7 @@ class TambahAlumniRequest extends FormRequest
             'tahun_masuk' => 'required|integer|digits:4',
             'status' => ['required', Rule::in(['LULUS', 'BELUM LULUS', 'PINDAH SEKOLAH', 'DIKELUARKAN'])],
             'tahun_keluar' => 'required|integer|digits:4',
-            'foto' => 'required|image|file|max:2048|nullable'
+            'foto' => 'image|file|max:2048|nullable'
         ];
     }
     public function withValidator($validator)

@@ -72,17 +72,19 @@
             </tr>
         </tbody>
     </table>
-    <div class="row">
-        <div class="col-4">
-            <form action="/dashboard/alumni/{{ $alumni->nis }}" class="d-flex justify-content-center" method="POST">
-                @method('DELETE')
-                @csrf
-                <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin mau menghapus data?')">Hapus</button>
-            </form>
-        </div>
-        <div class="col-4 d-flex justify-content-center">
-            <a href="/dashboard/alumni/{{ $alumni->nis }}/edit" class="btn btn-warning">Edit</a>
-        </div>
+    <div class="row justify-content-end">
+        @can('admin')
+            <div class="col-4">
+                <form action="/dashboard/alumni/{{ $alumni->nis }}" class="d-flex justify-content-center" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin mau menghapus data?')">Hapus</button>
+                </form>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+                <a href="/dashboard/alumni/{{ $alumni->nis }}/edit" class="btn btn-warning">Edit</a>
+            </div>
+        @endcan
         <div class="col-4 d-flex justify-content-center">
             <a href="/dashboard/alumni" class="btn btn-success d-block">Kembali</a>
         </div>

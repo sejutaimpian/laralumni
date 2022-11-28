@@ -46,15 +46,27 @@ class AlumniController extends Controller
         ]);
         return redirect()->back()->with('pesan', 'Data berhasil ditambahkan');
     }
-    public function detail($id)
+    public function detail($nis)
     {
         $data = [
             'title'         => 'Detail Alumni',
             'profile'       => $this->profile,
 
-            'alumni'        => AlumniModel::getJoinJurusan($id)
+            'alumni'        => AlumniModel::getJoinJurusan($nis)
         ];
 
         return view('dashboard/alumni-detail', $data);
+    }
+    public function edit($nis)
+    {
+        $data = [
+            'title'         => 'Edit Alumni',
+            'profile'       => $this->profile,
+
+            'alumni'        => AlumniModel::getJoinJurusan($nis),
+            'jurusan'       => JurusanModel::all()
+        ];
+
+        return view('dashboard/alumni-edit', $data);
     }
 }

@@ -206,7 +206,8 @@
                         <a href="/dashboard/alumni/{{ $a->nis }}" class="btn btn-success d-block btn-sm">Detail</a>
                         @can('admin')
                             <form action="/dashboard/alumni/{{ $a->nis }}" method="POST">
-                                <input type="hidden" name="_method" value="DELETE" />
+                                @csrf
+                                @method('DELETE')
                                 <a href="/dashboard/alumni/{{ $a->nis }}/edit" class="btn btn-warning d-block btn-sm my-1">Edit</a>
                                 <button type="submit" class="w-100 btn btn-danger btn-sm" onclick="return confirm('Yakin mau menghapus data?');">Hapus</button>
                             </form>

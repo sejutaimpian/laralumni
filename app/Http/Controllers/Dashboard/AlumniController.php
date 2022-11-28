@@ -105,4 +105,16 @@ class AlumniController extends Controller
         ]);
         return redirect('dashboard/alumni')->with('pesan', 'Data berhasil diupdate');
     }
+    public function delete($nis)
+    {
+        $alumni = AlumniModel::select('foto')->where('nis', $nis)->first();
+        if ($alumni->foto != 'default.png') {
+            Storage::delete("Foto-Alumni/$alumni->foto");
+        }
+        if (AlumniModel::destroy($nis)) {
+            return redirect()->to('/dashboard/alumni')->with('pesan', 'Data berhasil dihapus');
+        } else {
+            return redirect()->to('/dashboard/alumni')->with('peringatan', 'Data gagal dihapus');
+        }
+    }
 }

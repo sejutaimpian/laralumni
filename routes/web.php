@@ -47,6 +47,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
             Route::post('', 'tambahalumni');
             Route::get('{nis}/edit', 'edit');
             Route::put('{nis}', 'update');
+            Route::delete('{nis}', 'delete');
         });
     });
 });

@@ -11,6 +11,7 @@ class AlumniModel extends Model
 {
     use HasFactory;
     protected $table = 'alumni';
+    protected $primaryKey = 'nis';
     protected $fillable = ['nisn', 'nama', 'tempat_lahir', 'tanggal_lahir', 'ortu_wali', 'id_jurusan', 'tahun_masuk', 'status', 'tahun_keluar', 'foto'];
 
     /**
@@ -37,7 +38,7 @@ class AlumniModel extends Model
             return DB::table('alumni')
                 ->join('jurusan', 'alumni.id_jurusan', '=', 'jurusan.id')
                 ->where('nis', $nis)
-                ->get();
+                ->first();
         } else {
             return DB::table('alumni')
                 ->join('jurusan', 'alumni.id_jurusan', '=', 'jurusan.id')

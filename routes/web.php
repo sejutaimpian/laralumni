@@ -38,16 +38,18 @@ Route::get('logout', [LoginController::class, 'logout']);
 Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::get('', [DashboardController::class, 'index']);
 
+    // Route Alumni
     Route::prefix('alumni')->controller(AlumniController::class)->group(function () {
         Route::get('', 'index');
 
         Route::middleware('admin')->group(function () {
             Route::post('', 'tambahalumni');
+            Route::get('{id}', 'detail');
         });
     });
 });
 
 // Route Tets
 Route::get('/test', function () {
-    dd(auth()->user());
+    dd(auth()->check());
 });

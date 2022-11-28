@@ -8,7 +8,7 @@
     </div>
 </div>
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-center">
-    <img src="{{ asset("storage/Foto-Alumni-$alumni->tahun_masuk/$alumni->foto") }}" alt="{{ $alumni->nama }}">
+    <img src="{{ asset("storage/Foto-Alumni/$alumni->foto") }}" alt="{{ $alumni->nama }}">
 </div>
 <div class="container mb-4">
     <table class="table mt-3">

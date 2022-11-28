@@ -197,7 +197,7 @@
                 <tr>
                     <td>{{ $a->nis }}</td>
                     <td>
-                        <img src="{{ asset("storage/Foto-Alumni-$a->tahun_masuk/$a->foto") }}" alt="{{ $a->nama }}" class="" style="max-height: 100px;">
+                        <img src="{{ asset("storage/Foto-Alumni/$a->foto") }}" alt="{{ $a->nama }}" class="" style="max-height: 100px;">
                     </td>
                     <td>{{ $a->nama }}</td>
                     <td>{{ $a->nama_jurusan }}</td>

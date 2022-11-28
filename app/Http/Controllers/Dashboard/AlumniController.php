@@ -28,8 +28,12 @@ class AlumniController extends Controller
     {
         // Validasi inputan sudah dilakukan pada parameter request
 
-        // Upload foto
-        $request->file('foto')->store("Foto-Alumni-$request->tahun_masuk");
+        // Mengelola foto
+        $namaFoto = 'default.png';
+        if ($request->file('foto')) {
+            $request->file('foto')->store("Foto-Alumni");
+            $namaFoto = $request->file('foto')->hashName();
+        }
 
         // Save ke database
         AlumniModel::create([
@@ -42,7 +46,7 @@ class AlumniController extends Controller
             'tahun_masuk' => $request->tahun_masuk,
             'status' => $request->status,
             'tahun_keluar' => $request->tahun_keluar,
-            'foto' => $request->file('foto')->hashName()
+            'foto' => $namaFoto
         ]);
         return redirect()->back()->with('pesan', 'Data berhasil ditambahkan');
     }

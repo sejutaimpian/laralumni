@@ -11,6 +11,7 @@ class AlumniModel extends Model
 {
     use HasFactory;
     protected $table = 'alumni';
+    protected $fillable = ['nisn', 'nama', 'tempat_lahir', 'tanggal_lahir', 'ortu_wali', 'id_jurusan', 'tahun_masuk', 'status', 'tahun_keluar', 'foto'];
 
     /**
      * Create a new factory instance for the model.

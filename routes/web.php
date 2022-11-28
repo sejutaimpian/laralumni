@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route Home / Beranda
 Route::middleware('guest')->group(function () {
     Route::get('/', [HomeController::class, 'index']);
     Route::get('cekdata', [HomeController::class, 'cekdata']);
@@ -24,21 +25,29 @@ Route::middleware('guest')->group(function () {
     Route::post('login', [LoginController::class, 'validasi']);
 });
 
-Route::get('siswaterbaik', [HomeController::class, 'siswaterbaik']);
-Route::get('kabaralumni', [HomeController::class, 'kabaralumni']);
-Route::get('kabaralumni/{id}', [HomeController::class, 'kabar']);
-Route::get('loker', [HomeController::class, 'loker']);
-Route::get('kenangan', [HomeController::class, 'kenangan']);
+Route::controller(HomeController::class)->group(function () {
+    Route::get('siswaterbaik', 'siswaterbaik');
+    Route::get('kabaralumni', 'kabaralumni');
+    Route::get('kabaralumni/{id}', 'kabar');
+    Route::get('loker', 'loker');
+    Route::get('kenangan', 'kenangan');
+});
 Route::get('logout', [LoginController::class, 'logout']);
 
+// Route Dashboard
 Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::get('', [DashboardController::class, 'index']);
 
-    Route::prefix('alumni')->group(function () {
-        Route::get('', [AlumniController::class, 'index']);
+    Route::prefix('alumni')->controller(AlumniController::class)->group(function () {
+        Route::get('', 'index');
+
+        Route::middleware('admin')->group(function () {
+            Route::post('', 'tambahalumni');
+        });
     });
 });
 
+// Route Tets
 Route::get('/test', function () {
     dd(auth()->user());
 });

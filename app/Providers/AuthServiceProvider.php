@@ -3,7 +3,10 @@
 namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
+
+use App\Models\AkunModel;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -25,6 +28,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        // Gate
+        Gate::define('admin', function (AkunModel $user) {
+            return $user->role == 'admin';
+        });
     }
 }

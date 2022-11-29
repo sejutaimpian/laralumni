@@ -11,6 +11,7 @@ class KabarModel extends Model
 {
     use HasFactory;
     protected $table = 'kabar';
+    protected $fillable = ['idakun', 'judul', 'isi', 'foto'];
 
     protected static function newFactory()
     {

@@ -94,7 +94,7 @@
                     <td>{{ $k->nama }}</td>
                     <td>{{ $k->judul }}</td>
                     <td>
-                        <img src="/image/{{ $k->foto }}" alt="{{ $k->judul }}" class="" style="max-height: 100px;">
+                        <img src="{{ asset("storage/Foto-Kabar/$k->foto") }}" alt="{{ $k->judul }}" class="" style="max-height: 100px;">
                     </td>
                     <td>
                         <form action="/dashboard/kabaralumni/{{ $k->id }}" method="POST">

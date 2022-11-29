@@ -11,6 +11,7 @@ class PenghargaanModel extends Model
 {
     use HasFactory;
     protected $table = 'penghargaan';
+    protected $fillable = ['nis', 'penghargaan'];
 
     protected static function newFactory()
     {

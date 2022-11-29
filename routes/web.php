@@ -56,7 +56,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
         Route::get('', 'index');
 
         Route::middleware('admin')->group(function () {
-            Route::post('{id}', 'tambah');
+            Route::post('', 'tambah');
             Route::get('{id}/edit', 'edit');
             Route::put('{id}', 'update');
             Route::delete('{id}', 'delete');

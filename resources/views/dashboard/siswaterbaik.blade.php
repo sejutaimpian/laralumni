@@ -14,7 +14,7 @@
     <div class="modal fade p-0" id="Modal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen-sm-down">
             <div class="modal-content">
-                <form action="/admin/siswaterbaik" method="POST" enctype="multipart/form-data">
+                <form action="/dashboard/siswaterbaik" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-header">
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Penghargaan</h1>
@@ -99,14 +99,14 @@
                     <td>
                         <img src="{{ asset("storage/Foto-Alumni/$p->foto") }}" alt="{{ $p->nama }}" class="" style="max-height: 100px;">
                     </td>
-                    <td><a href="/admin/alumni/{{ $p->nis }}">{{ $p->nama }}</a></td>
+                    <td><a href="/dashboard/alumni/{{ $p->nis }}">{{ $p->nama }}</a></td>
                     <td>{{ $p->nama_jurusan }}</td>
                     <td>{{ $p->tahun_keluar }}</td>
                     <td>{{ $p->penghargaan }}</td>
                     <td>
-                        <form action="/admin/siswaterbaik/{{ $p->id }}" method="POST">
+                        <form action="/dashboard/siswaterbaik/{{ $p->id }}" method="POST">
                             <input type="hidden" name="_method" value="DELETE" />
-                            <a href="/admin/siswaterbaik/{{ $p->id }}/edit" class="btn btn-warning d-block btn-sm my-1">Edit</a>
+                            <a href="/dashboard/siswaterbaik/{{ $p->id }}/edit" class="btn btn-warning d-block btn-sm my-1">Edit</a>
                             <button type="submit" class="w-100 btn btn-danger btn-sm" onclick="return confirm('Yakin mau menghapus data?');">Hapus</button>
                         </form>
                     </td>

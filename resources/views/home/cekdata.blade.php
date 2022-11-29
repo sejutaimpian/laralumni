@@ -24,7 +24,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-center">
-                    <img src="/image/{{ $alumni->foto }}" alt="{{ $alumni->nama }}">
+                    <img src="{{ asset("storage/Foto-Alumni/$alumni->foto") }}" alt="{{ $alumni->nama }}">
                 </div>
                 <table class="table mt-3">
                     <thead>

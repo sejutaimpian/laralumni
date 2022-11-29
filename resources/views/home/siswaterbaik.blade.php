@@ -14,7 +14,7 @@
                     <div class="col">
                         <div class="card shadow-sm">
                             <div class="position-relative">
-                                <img src="/image/{{ $p->foto }}" class="card-img-top" alt="{{ $p->nama }}">
+                                <img src="{{ asset("storage/Foto-Alumni/$p->foto") }}" class="card-img-top" alt="{{ $p->nama }}">
                                 <span class="position-absolute top-0 end-0 bg-primary text-white px-2 fs-6 rounded" style="--bs-bg-opacity: .8;"><i class="bi bi-ladder pe-2"></i>{{ $p->tahun_keluar }}</span>
                                 <span class="position-absolute bottom-0 start-0 bg-dark text-light px-2 fs-6 text-opacity-75"><i class="bi {{ $p->icon }} pe-2"></i>{{ $p->nama_jurusan }}</span>
                             </div>

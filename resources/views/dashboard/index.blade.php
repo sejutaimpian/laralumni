@@ -9,7 +9,7 @@
                 <div class="fw-bold text-light fs-1"><?= $total['alumni']; ?></div>
                 <div class="fs-3 fw-normal">Alumni</div>
                 <i class="bi bi-mortarboard position-absolute top-0 end-0 fs-1 pe-3"></i>
-                <a href="/{{ auth()->user()->role }}/alumni" class="text-light fw-light">Lihat selengkapnya <i class="bi bi-chevron-right"></i></a>
+                <a href="/dashboard/alumni" class="text-light fw-light">Lihat selengkapnya <i class="bi bi-chevron-right"></i></a>
             </div>
         </div>
         <div class="col my-1">
@@ -17,7 +17,7 @@
                 <div class="fw-bold text-light fs-1"><?= $total['penghargaan']; ?></div>
                 <div class="fs-3 fw-normal">Siswa Terbaik</div>
                 <i class="bi bi-award position-absolute top-0 end-0 fs-1  pe-3"></i>
-                <a href="/{{ auth()->user()->role }}/siswaterbaik" class="text-light fw-light">Lihat selengkapnya <i class="bi bi-chevron-right"></i></a>
+                <a href="/dashboard/siswaterbaik" class="text-light fw-light">Lihat selengkapnya <i class="bi bi-chevron-right"></i></a>
             </div>
         </div>
         <div class="col my-1">
@@ -25,7 +25,7 @@
                 <div class="fw-bold text-light fs-1"><?= $total['kabar']; ?></div>
                 <div class="fs-3 fw-normal">Kabar Alumni</div>
                 <i class="bi bi-newspaper position-absolute top-0 end-0 fs-1  pe-3"></i>
-                <a href="/{{ auth()->user()->role }}/kabaralumni" class="text-light fw-light">Lihat selengkapnya <i class="bi bi-chevron-right"></i></a>
+                <a href="/dashboard/kabaralumni" class="text-light fw-light">Lihat selengkapnya <i class="bi bi-chevron-right"></i></a>
             </div>
         </div>
         <div class="col my-1">
@@ -33,7 +33,7 @@
                 <div class="fw-bold text-light fs-1"><?= $total['loker']; ?></div>
                 <div class="fs-3 fw-normal">Loker</div>
                 <i class="bi bi-briefcase position-absolute top-0 end-0 fs-1  pe-3"></i>
-                <a href="/{{ auth()->user()->role }}/loker" class="text-light fw-light">Lihat selengkapnya <i class="bi bi-chevron-right"></i></a>
+                <a href="/dashboard/loker" class="text-light fw-light">Lihat selengkapnya <i class="bi bi-chevron-right"></i></a>
             </div>
         </div>
         <div class="col my-1">
@@ -41,7 +41,7 @@
                 <div class="fw-bold text-light fs-1"><?= $total['kenangan']; ?></div>
                 <div class="fs-3 fw-normal">Kenangan</div>
                 <i class="bi bi-journal-album position-absolute top-0 end-0 fs-1  pe-3"></i>
-                <a href="/{{ auth()->user()->role }}/kenangan" class="text-light fw-light">Lihat selengkapnya <i class="bi bi-chevron-right"></i></a>
+                <a href="/dashboard/kenangan" class="text-light fw-light">Lihat selengkapnya <i class="bi bi-chevron-right"></i></a>
             </div>
         </div>
 
@@ -57,7 +57,7 @@
             <div class="col">
                 <div class="card shadow-sm">
                     <div class="position-relative">
-                        <img src="/image/{{ $p->foto }}" class="card-img-top" alt="{{ $p->nama }}">
+                        <img src="{{ asset("storage/Foto-Alumni/$p->foto") }}" class="card-img-top" alt="{{ $p->nama }}">
                         <span class="position-absolute top-0 end-0 bg-primary text-white px-2 fs-6 rounded" style="--bs-bg-opacity: .8;"><i class="bi bi-ladder pe-2"></i>{{ $p->tahun_keluar }}</span>
                         <span class="position-absolute bottom-0 start-0 bg-dark text-light px-2 fs-6 text-opacity-75"><i class="bi {{ $p->icon }} pe-2"></i>{{ $p->nama_jurusan }}</span>
                     </div>
@@ -73,7 +73,7 @@
     </div>
     <div class="row justify-content-center align-items-center text-center mt-1">
         <div class="btn-group col-md-6 rounded-pill" role="group" aria-label="Basic mixed styles example">
-            <a href="/{{ auth()->user()->role }}/siswaterbaik" class="col-6 col-md-4 col-lg-3 btn btn-secondary"><i class="bi bi-gear"></i> Operasi</a>
+            <a href="/dashboard/siswaterbaik" class="col-6 col-md-4 col-lg-3 btn btn-secondary"><i class="bi bi-gear"></i> Operasi</a>
             <a href="/siswaterbaik" class="col-6 col-md-4 col-lg-3 btn btn-outline-primary" target="_blank">Selengkapnya <i class="bi bi-arrow-right"></i></a>
         </div>
     </div>
@@ -106,7 +106,7 @@
     </div>
     <div class="row justify-content-center align-items-center text-center mt-1">
         <div class="btn-group col-md-6 rounded-pill" role="group" aria-label="Basic mixed styles example">
-            <a href="/{{ auth()->user()->role }}/kabaralumni" class="col-6 col-md-4 col-lg-3 btn btn-secondary"><i class="bi bi-gear"></i> Operasi</a>
+            <a href="/dashboard/kabaralumni" class="col-6 col-md-4 col-lg-3 btn btn-secondary"><i class="bi bi-gear"></i> Operasi</a>
             <a href="/kabaralumni" class="col-6 col-md-4 col-lg-3 btn btn-outline-primary" target="_blank">Selengkapnya <i class="bi bi-arrow-right"></i></a>
         </div>
     </div>
@@ -143,7 +143,7 @@
     </div>
     <div class="row justify-content-center align-items-center text-center mt-1">
         <div class="btn-group col-md-6 rounded-pill" role="group" aria-label="Basic mixed styles example">
-            <a href="/{{ auth()->user()->role }}/loker" class="col-6 col-md-4 col-lg-3 btn btn-secondary"><i class="bi bi-gear"></i> Operasi</a>
+            <a href="/dashboard/loker" class="col-6 col-md-4 col-lg-3 btn btn-secondary"><i class="bi bi-gear"></i> Operasi</a>
             <a href="/loker" class="col-6 col-md-4 col-lg-3 btn btn-outline-primary" target="_blank">Selengkapnya <i class="bi bi-arrow-right"></i></a>
         </div>
     </div>
@@ -177,7 +177,7 @@
     </div>
     <div class="row justify-content-center align-items-center text-center">
         <div class="btn-group col-md-6 rounded-pill" role="group" aria-label="Basic mixed styles example">
-            <a href="/{{ auth()->user()->role }}/kenangan" class="col-6 col-md-4 col-lg-3 btn btn-secondary"><i class="bi bi-gear"></i> Operasi</a>
+            <a href="/dashboard/kenangan" class="col-6 col-md-4 col-lg-3 btn btn-secondary"><i class="bi bi-gear"></i> Operasi</a>
             <a href="/kenangan" class="col-6 col-md-4 col-lg-3 btn btn-outline-primary" target="_blank">Selengkapnya <i class="bi bi-arrow-right"></i></a>
         </div>
     </div>

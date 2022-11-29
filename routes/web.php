@@ -50,6 +50,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
             Route::delete('{nis}', 'delete');
         });
     });
+    // Route Penghargaan
 });
 
 // Route Tets

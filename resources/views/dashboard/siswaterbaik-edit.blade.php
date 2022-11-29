@@ -3,10 +3,10 @@
 @section('content')
 <!-- Status -->
 @if (session('pesan') || session('peringatan'))
-<div class="alert alert-{{ session('pesan') ? 'success' : 'warning' }} alert-dismissible fade show  mb-0" role="alert">
-    {{ session('pesan') ?? session('peringatan') }}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
+    <div class="alert alert-{{ session('pesan') ? 'success' : 'warning' }} alert-dismissible fade show  mb-0" role="alert">
+        {{ session('pesan') ?? session('peringatan') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 @endif
 
 <!-- title -->

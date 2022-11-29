@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\AlumniController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\KabarController;
 use App\Http\Controllers\Dashboard\PenghargaanController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -51,8 +52,20 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
             Route::delete('{nis}', 'delete');
         });
     });
+
     // Route Penghargaan
     Route::prefix('siswaterbaik')->controller(PenghargaanController::class)->group(function () {
+        Route::get('', 'index');
+
+        Route::middleware('admin')->group(function () {
+            Route::post('', 'tambah');
+            Route::get('{id}/edit', 'edit');
+            Route::put('{id}', 'update');
+            Route::delete('{id}', 'delete');
+        });
+    });
+    // Route Kabar
+    Route::prefix('kabaralumni')->controller(KabarController::class)->group(function () {
         Route::get('', 'index');
 
         Route::middleware('admin')->group(function () {
@@ -66,5 +79,5 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
 
 // Route Tets
 Route::get('/test', function () {
-    dd(auth()->check());
+    dd(auth()->user()->id);
 });

@@ -49,7 +49,7 @@ class PenghargaanController extends Controller
         // Validasi inputan sudah dilakukan pada parameter request
 
         // Save ke database
-        PenghargaanModel::where('id', $request->id)->update([
+        PenghargaanModel::where('id', $id)->update([
             'penghargaan' => $request->penghargaan
         ]);
 

@@ -89,7 +89,9 @@
                 <th>Jurusan</th>
                 <th>Tahun Keluar</th>
                 <th>Penghargaan</th>
-                <th>Aksi</th>
+                @can('admin')
+                    <th>Aksi</th>
+                @endcan
             </tr>
         </thead>
         <tbody>
@@ -103,14 +105,16 @@
                     <td>{{ $p->nama_jurusan }}</td>
                     <td>{{ $p->tahun_keluar }}</td>
                     <td>{{ $p->penghargaan }}</td>
-                    <td>
-                        <form action="/dashboard/siswaterbaik/{{ $p->id }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <a href="/dashboard/siswaterbaik/{{ $p->id }}/edit" class="btn btn-warning d-block btn-sm my-1">Edit</a>
-                            <button type="submit" class="w-100 btn btn-danger btn-sm" onclick="return confirm('Yakin mau menghapus data?');">Hapus</button>
-                        </form>
-                    </td>
+                    @can('admin')
+                        <td>
+                            <form action="/dashboard/siswaterbaik/{{ $p->id }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <a href="/dashboard/siswaterbaik/{{ $p->id }}/edit" class="btn btn-warning d-block btn-sm my-1">Edit</a>
+                                <button type="submit" class="w-100 btn btn-danger btn-sm" onclick="return confirm('Yakin mau menghapus data?');">Hapus</button>
+                            </form>
+                        </td>
+                    @endcan
                 </tr>
             @endforeach
         </tbody>

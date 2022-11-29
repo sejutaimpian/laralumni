@@ -15,7 +15,7 @@
                         <div class="card shadow-sm" style="max-width: 540px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="/image/{{ $k->foto }}" class="img-fluid rounded-start rounded" alt="{{ $k->judul }}">
+                                    <img src="{{ asset("storage/Foto-Kabar/$k->foto") }}" class="img-fluid rounded-start rounded" alt="{{ $k->judul }}">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">

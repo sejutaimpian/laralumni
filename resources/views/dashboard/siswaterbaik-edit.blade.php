@@ -23,7 +23,7 @@
     <div class="row mb-2">
         <label for="nis" class="col-sm-4 col-form-label">Nama Alumni</label>
         <div class="col-sm-8">
-            <select class="form-select @error('nis') is-invalid @enderror" id="nis" name="nis">
+            <select disabled class="form-select @error('nis') is-invalid @enderror" id="nis" name="nis">
                 @if (old('nis'))
                     @foreach ($alumni as $a)
                         <option {{ old('nis') == $a->nis ? "selected" : "" }} value="{{ $a->nis }}">{{ $a->nama }}</option>

@@ -44,4 +44,15 @@ class PenghargaanController extends Controller
 
         return view('dashboard/siswaterbaik-edit', $data);
     }
+    public function update(PenghargaanRequest $request, $id)
+    {
+        // Validasi inputan sudah dilakukan pada parameter request
+
+        // Save ke database
+        PenghargaanModel::where('id', $request->id)->update([
+            'penghargaan' => $request->penghargaan
+        ]);
+
+        return redirect('dashboard/siswaterbaik')->with('pesan', 'Penghargaan berhasil diupdate');
+    }
 }

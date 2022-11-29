@@ -84,7 +84,7 @@ class AlumniController extends Controller
             $request->file('foto')->store("Foto-Alumni");
             $namaFoto = $request->file('foto')->hashName();
             if ($alumni->foto != 'default.png') {
-                Storage::delete("Foto-Alumni/$namaFoto");
+                Storage::delete("Foto-Alumni/$alumni->foto");
             }
         } else {
             $namaFoto = $alumni->foto;

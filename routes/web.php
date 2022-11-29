@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\AlumniController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\PenghargaanController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -51,6 +52,16 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
         });
     });
     // Route Penghargaan
+    Route::prefix('siswaterbaik')->controller(PenghargaanController::class)->group(function () {
+        Route::get('', 'index');
+
+        Route::middleware('admin')->group(function () {
+            Route::post('{id}', 'tambah');
+            Route::get('{id}/edit', 'edit');
+            Route::put('{id}', 'update');
+            Route::delete('{id}', 'delete');
+        });
+    });
 });
 
 // Route Tets

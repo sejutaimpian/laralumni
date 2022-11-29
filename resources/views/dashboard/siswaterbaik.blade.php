@@ -105,7 +105,8 @@
                     <td>{{ $p->penghargaan }}</td>
                     <td>
                         <form action="/dashboard/siswaterbaik/{{ $p->id }}" method="POST">
-                            <input type="hidden" name="_method" value="DELETE" />
+                            @csrf
+                            @method('DELETE')
                             <a href="/dashboard/siswaterbaik/{{ $p->id }}/edit" class="btn btn-warning d-block btn-sm my-1">Edit</a>
                             <button type="submit" class="w-100 btn btn-danger btn-sm" onclick="return confirm('Yakin mau menghapus data?');">Hapus</button>
                         </form>

@@ -55,4 +55,12 @@ class PenghargaanController extends Controller
 
         return redirect('dashboard/siswaterbaik')->with('pesan', 'Penghargaan berhasil diupdate');
     }
+    public function delete($id)
+    {
+        if (PenghargaanModel::destroy($id)) {
+            return redirect()->to('/dashboard/alumni')->with('pesan', 'Data berhasil dihapus');
+        } else {
+            return redirect()->to('/dashboard/alumni')->with('peringatan', 'Data gagal dihapus');
+        }
+    }
 }

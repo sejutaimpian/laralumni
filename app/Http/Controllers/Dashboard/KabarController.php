@@ -76,4 +76,16 @@ class KabarController extends Controller
 
         return redirect('dashboard/kabaralumni')->with('pesan', 'Kabar Alumni berhasil diupdate');
     }
+    public function delete($id)
+    {
+        $kabar = KabarModel::select('foto')->where('id', $id)->first();
+        if ($kabar->foto != 'default.png') {
+            Storage::delete("Foto-Kabar/$kabar->foto");
+        }
+        if (KabarModel::destroy($id)) {
+            return redirect()->to('/dashboard/kabaralumni')->with('pesan', 'Data berhasil dihapus');
+        } else {
+            return redirect()->to('/dashboard/kabaralumni')->with('peringatan', 'Data gagal dihapus');
+        }
+    }
 }

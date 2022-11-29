@@ -98,6 +98,7 @@
                     </td>
                     <td>
                         <form action="/dashboard/kabaralumni/{{ $k->id }}" method="POST">
+                            @csrf
                             @method('DELETE')
                             <a href="/kabaralumni/{{ $k->id }}" class="btn btn-success d-block btn-sm" target="_blank">Detail</a>
                             <a href="/dashboard/kabaralumni/{{ $k->id }}/edit" class="btn btn-warning d-block btn-sm my-1">Edit</a>

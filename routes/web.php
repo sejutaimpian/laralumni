@@ -3,6 +3,7 @@
 use App\Http\Controllers\Dashboard\AlumniController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\KabarController;
+use App\Http\Controllers\Dashboard\KenanganController;
 use App\Http\Controllers\Dashboard\LokerController;
 use App\Http\Controllers\Dashboard\PenghargaanController;
 use App\Http\Controllers\HomeController;
@@ -79,6 +80,17 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     });
     // Route Loker
     Route::prefix('loker')->controller(LokerController::class)->group(function () {
+        Route::get('', 'index');
+
+        Route::middleware('admin')->group(function () {
+            Route::post('', 'tambah');
+            Route::get('{id}/edit', 'edit');
+            Route::put('{id}', 'update');
+            Route::delete('{id}', 'delete');
+        });
+    });
+    // Route Kenangan
+    Route::prefix('kenangan')->controller(KenanganController::class)->group(function () {
         Route::get('', 'index');
 
         Route::middleware('admin')->group(function () {

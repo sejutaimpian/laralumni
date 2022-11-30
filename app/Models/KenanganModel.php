@@ -11,6 +11,7 @@ class KenanganModel extends Model
 {
     use HasFactory;
     protected $table = 'kenangan';
+    protected $fillable = ['nama_kenangan', 'pengelola', 'link'];
 
     protected static function newFactory()
     {

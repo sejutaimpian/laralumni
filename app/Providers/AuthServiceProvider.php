@@ -34,7 +34,10 @@ class AuthServiceProvider extends ServiceProvider
             return $user->role == 'admin';
         });
         Gate::define('kabar', function (AkunModel $user, $idakun) {
-            return $user->id == $idakun;
+            if (auth()->user()->role != 'admin') {
+                return $user->id == $idakun;
+            }
+            return true;
         });
     }
 }

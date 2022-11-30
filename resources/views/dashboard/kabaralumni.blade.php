@@ -84,7 +84,7 @@
             <tr>
                 <th>Author</th>
                 <th>Judul</th>
-                <th>Foto</th>
+                <th>Foto</th>        
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -97,13 +97,15 @@
                         <img src="{{ asset("storage/Foto-Kabar/$k->foto") }}" alt="{{ $k->judul }}" class="" style="max-height: 100px;">
                     </td>
                     <td>
+                        <a href="/kabaralumni/{{ $k->id }}" class="btn btn-success d-block btn-sm" target="_blank">Detail</a>
+                        @can('kabar', $k->idakun)
+                        <a href="/dashboard/kabaralumni/{{ $k->id }}/edit" class="btn btn-warning d-block btn-sm my-1">Edit</a>
                         <form action="/dashboard/kabaralumni/{{ $k->id }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <a href="/kabaralumni/{{ $k->id }}" class="btn btn-success d-block btn-sm" target="_blank">Detail</a>
-                            <a href="/dashboard/kabaralumni/{{ $k->id }}/edit" class="btn btn-warning d-block btn-sm my-1">Edit</a>
                             <button type="submit" class="w-100 btn btn-danger btn-sm" onclick="return confirm('Yakin mau menghapus data?');">Hapus</button>
                         </form>
+                        @endcan
                     </td>
                 </tr>
             @endforeach

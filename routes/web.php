@@ -68,7 +68,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::prefix('kabaralumni')->controller(KabarController::class)->group(function () {
         Route::get('', 'index');
 
-        Route::middleware('admin')->group(function () {
+        Route::middleware('kabar')->group(function () {
             Route::post('', 'tambah');
             Route::get('{id}/edit', 'edit');
             Route::put('{id}', 'update');

@@ -23,13 +23,13 @@ class KabarModel extends Model
         if ($id != null) {
             return DB::table('kabar')
                 ->join('akun', 'kabar.idakun', '=', 'akun.id')
-                ->select('kabar.id', 'nama', 'judul', 'isi', 'kabar.foto', 'kabar.created_at')
+                ->select('kabar.id', 'kabar.idakun', 'nama', 'judul', 'isi', 'kabar.foto', 'kabar.created_at')
                 ->orderBy('created_at', 'desc')->where('kabar.id', '=', $id)
                 ->first();
         } else {
             return DB::table('kabar')
                 ->join('akun', 'kabar.idakun', '=', 'akun.id')
-                ->select('kabar.id', 'nama', 'judul', 'isi', 'kabar.foto', 'kabar.created_at')
+                ->select('kabar.id', 'kabar.idakun', 'nama', 'judul', 'isi', 'kabar.foto', 'kabar.created_at')
                 ->orderBy('created_at', 'desc')
                 ->get();
         }

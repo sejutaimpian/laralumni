@@ -3,9 +3,11 @@
 use App\Http\Controllers\Dashboard\AlumniController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\KabarController;
+use App\Http\Controllers\Dashboard\LokerController;
 use App\Http\Controllers\Dashboard\PenghargaanController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Models\LokerModel;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -75,9 +77,13 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
             Route::delete('{id}', 'delete');
         });
     });
+    // Route Loker
+    Route::prefix('loker')->controller(LokerController::class)->group(function () {
+        Route::get('', 'index');
+    });
 });
 
 // Route Tets
 Route::get('/test', function () {
-    dd(auth()->user()->id);
+    dd(LokerModel::orderBy('deadline', 'desc')->get());
 });

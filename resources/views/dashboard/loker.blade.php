@@ -170,7 +170,7 @@
             @foreach ($loker as $l)
                 <tr>
                     <td>
-                        <img src="/image/{{ $l->logo_perusahaan }}" alt="{{ $l->nama_perusahaan }}" class="" style="max-height: 100px;">
+                        <img src="{{ asset("storage/Logo-Perusahaan/$l->logo_perusahaan") }}" alt="{{ $l->nama_perusahaan }}" class="" style="max-height: 100px;">
                     </td>
                     <td>{{ $l->pekerjaan }}</td>
                     <td>{{ $l->deadline }}</td>

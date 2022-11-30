@@ -10,6 +10,7 @@ class LokerModel extends Model
 {
     use HasFactory;
     protected $table = 'loker';
+    protected $fillable = ['logo_perusahaan', 'pekerjaan', 'nama_perusahaan', 'penempatan', 'gaji', 'pendidikan', 'usia', 'kualifikasi', 'sumber', 'deadline'];
 
     protected static function getLimitLoker()
     {

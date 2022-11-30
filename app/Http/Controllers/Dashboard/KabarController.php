@@ -43,7 +43,7 @@ class KabarController extends Controller
     public function edit($id)
     {
         $data = [
-            'title'         => 'Edit Penghargaan',
+            'title'         => 'Edit Kabar',
             'profile'       => $this->profile,
 
             'kabar' => KabarModel::getJoinKabarAkun($id)

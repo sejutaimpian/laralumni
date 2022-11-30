@@ -45,4 +45,15 @@ class LokerController extends Controller
         ]);
         return redirect()->back()->with('pesan', 'Data berhasil ditambahkan');
     }
+    public function edit($id)
+    {
+        $data = [
+            'title'     => 'Edit Lowongan Pekerjaan',
+            'profile'   => $this->profile,
+
+            'loker'     => LokerModel::find($id)
+        ];
+
+        return view('dashboard/loker-edit', $data);
+    }
 }

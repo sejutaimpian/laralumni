@@ -80,6 +80,13 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     // Route Loker
     Route::prefix('loker')->controller(LokerController::class)->group(function () {
         Route::get('', 'index');
+
+        Route::middleware('admin')->group(function () {
+            Route::post('', 'tambah');
+            Route::get('{id}/edit', 'edit');
+            Route::put('{id}', 'update');
+            Route::delete('{id}', 'delete');
+        });
     });
 });
 

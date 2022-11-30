@@ -24,7 +24,7 @@
         <label for="pekerjaan" class="col-sm-4 col-form-label">Pekerjaan</label>
         <div class="col-sm-8">
             <input type="text" class="form-control @error('pekerjaan') is-invalid @enderror" id="pekerjaan" name="pekerjaan" value="{{ old('pekerjaan') ?? $loker->pekerjaan }}">
-            @error('nama_perusahaan')    
+            @error('pekerjaan')    
                 <div class="invalid-feedback mt-0">
                     {{ $message }}
                 </div>
@@ -46,7 +46,7 @@
         <label for="penempatan" class="col-sm-4 col-form-label">Penempatan</label>
         <div class="col-sm-8">
             <input type="text" class="form-control @error('penempatan') is-invalid @enderror" id="penempatan" name="penempatan" value="{{ old('penempatan') ?? $loker->penempatan }}">
-            @error('nama_perusahaan')    
+            @error('penempatan')    
                 <div class="invalid-feedback mt-0">
                     {{ $message }}
                 </div>
@@ -57,7 +57,7 @@
         <label for="gaji" class="col-sm-4 col-form-label">Gaji</label>
         <div class="col-sm-8">
             <input type="text" class="form-control @error('gaji') is-invalid @enderror" id="gaji" name="gaji" value="{{ old('gaji') ?? $loker->gaji }}">
-            @error('nama_perusahaan')    
+            @error('gaji')    
                 <div class="invalid-feedback mt-0">
                     {{ $message }}
                 </div>
@@ -68,7 +68,7 @@
         <label for="pendidikan" class="col-sm-4 col-form-label">Pendidikan</label>
         <div class="col-sm-8">
             <input type="text" class="form-control @error('pendidikan') is-invalid @enderror" id="pendidikan" name="pendidikan" value="{{ old('pendidikan') ?? $loker->pendidikan }}">
-            @error('nama_perusahaan')    
+            @error('pendidikan')    
                 <div class="invalid-feedback mt-0">
                     {{ $message }}
                 </div>
@@ -79,7 +79,7 @@
         <label for="usia" class="col-sm-4 col-form-label">Usia</label>
         <div class="col-sm-8">
             <input type="text" class="form-control @error('usia') is-invalid @enderror" id="usia" name="usia" value="{{ old('usia') ?? $loker->usia }}">
-            @error('nama_perusahaan')    
+            @error('usia')    
                 <div class="invalid-feedback mt-0">
                     {{ $message }}
                 </div>
@@ -90,7 +90,7 @@
         <label for="kualifikasi" class="col-sm-4 col-form-label">Kualifikasi</label>
         <div class="col-sm-8">
             <input type="text" class="form-control @error('kualifikasi') is-invalid @enderror" id="kualifikasi" name="kualifikasi" value="{{ old('kualifikasi') ?? $loker->kualifikasi }}">
-            @error('nama_perusahaan')    
+            @error('kualifikasi')    
                 <div class="invalid-feedback mt-0">
                     {{ $message }}
                 </div>
@@ -101,7 +101,7 @@
         <label for="sumber" class="col-sm-4 col-form-label">Link Sumber</label>
         <div class="col-sm-8">
             <input type="url" class="form-control @error('sumber') is-invalid @enderror" id="sumber" name="sumber" value="{{ old('sumber') ?? $loker->sumber }}" placeholder="https://google.com">
-            @error('nama_perusahaan')    
+            @error('sumber')    
                 <div class="invalid-feedback mt-0">
                     {{ $message }}
                 </div>
@@ -112,7 +112,7 @@
         <label for="deadline" class="col-sm-4 col-form-label">Deadline</label>
         <div class="col-sm-8">
             <input type="date" class="form-control @error('deadline') is-invalid @enderror" id="deadline" name="deadline" value="{{ old('deadline') ?? $loker->deadline }}">
-            @error('nama_perusahaan')    
+            @error('deadline')    
                 <div class="invalid-feedback mt-0">
                     {{ $message }}
                 </div>
@@ -124,7 +124,7 @@
         <div class="col-sm-8">
             <div class="">
                 <input class="form-control @error('logo_perusahaan') is-invalid @enderror" type="file" id="logo_perusahaan" name="logo_perusahaan">
-                @error('nama_perusahaan')    
+                @error('logo_perusahaan')    
                     <div class="invalid-feedback mt-0">
                         {{ $message }}
                     </div>
@@ -134,7 +134,7 @@
     </div>
     <div class="row justify-content-end align-items-center text-center mt-1">
         <div class="btn-group col-md-6 rounded-pill" role="group" aria-label="Basic mixed styles example">
-            <a href="/dashboard/siswaterbaik" class="col-6 col-md-4 col-lg-3 btn"><i class="bi bi-arrow-left pe-2"></i>Kembali</a>
+            <a href="/dashboard/loker" class="col-6 col-md-4 col-lg-3 btn"><i class="bi bi-arrow-left pe-2"></i>Kembali</a>
             <button type="submit" class="col-6 col-md-4 col-lg-3 btn btn-secondary">Update<i class="bi bi-check2-circle ps-2"></i></button>
         </div>
     </div>

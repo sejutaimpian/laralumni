@@ -178,7 +178,7 @@
             <div class="col">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <img src="/image/{{ $l->logo_perusahaan }}" alt="{{ $l->nama_perusahaan }}" style="max-height: 100px;" class="mb-3">
+                        <img src="{{ asset("storage/Logo-Perusahaan/$l->logo_perusahaan") }}" alt="{{ $l->nama_perusahaan }}" style="max-height: 100px;" class="mb-3">
                         <h2 class="card-title lh-1">{{ $l->pekerjaan }}</h2>
                         <p>{{ $l->nama_perusahaan }}</p>
                         <h6 class="fw-bold mb-0">{{ $l->penempatan }}</h6>

@@ -7,7 +7,7 @@ use App\Http\Controllers\Dashboard\LokerController;
 use App\Http\Controllers\Dashboard\PenghargaanController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
-use App\Models\LokerModel;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -91,6 +91,6 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
 });
 
 // Route Tets
-Route::get('/test', function () {
-    dd(LokerModel::orderBy('deadline', 'desc')->get());
+Route::get('/test', function (Request $request) {
+    dd(session('hello'));
 });

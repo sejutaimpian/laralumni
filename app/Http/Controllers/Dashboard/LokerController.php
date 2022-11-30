@@ -88,4 +88,16 @@ class LokerController extends Controller
         ]);
         return redirect('dashboard/loker')->with('pesan', 'Data berhasil diupdate');
     }
+    public function delete($id)
+    {
+        $loker = LokerModel::select('logo_perusahaan')->where('id', $id)->first();
+        if ($loker->logo_perusahaan != 'default.png') {
+            Storage::delete("Logo-Perusahaan/$loker->logo_perusahaan");
+        }
+        if (LokerModel::destroy($id)) {
+            return redirect()->to('/dashboard/loker')->with('pesan', 'Data berhasil dihapus');
+        } else {
+            return redirect()->to('/dashboard/loker')->with('peringatan', 'Data gagal dihapus');
+        }
+    }
 }
